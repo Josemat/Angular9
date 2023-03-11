@@ -1,3 +1,6 @@
+h2 {
+  margin: 20px 50px;
+}
 label {
   width: 25vh;
   margin: 5px;
@@ -10,10 +13,25 @@ input {
   padding: 5px;
   border-radius: 5px;
 }
+
+.error {
+  border: solid 1px rgb(255, 76, 76) !important ;
+  background-color: rgba(200, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.warning {
+  background-color: rgba(255, 255, 0, 0.2);
+  border: solid 1px rgb(255, 216, 76);
+  border-radius: 4px;
+}
+.success {
+  background-color: rgba(0, 210, 0, 0.2);
+  border: solid 1px rgb(0, 216, 76);
+  border-radius: 4px;
+}
 span {
   margin: 5px;
-  border: solid 1px rgb(255, 76, 76);
-  border-radius: 4px;
+  color: grey;
   padding: 5px;
 }
 .grupoUno {

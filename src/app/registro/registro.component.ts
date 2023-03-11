@@ -17,6 +17,6 @@ export class RegistroComponent {
     });
   }
   registrarse() {
-    console.log(this.myForm);
+    console.log(this.myForm.value);
   }
 }

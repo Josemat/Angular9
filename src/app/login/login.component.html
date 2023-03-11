@@ -11,7 +11,8 @@
           myLogin.get('usuario')?.hasError('required'),
         warning:
           myLogin.get('usuario')?.hasError('pattern') ||
-          myLogin.get('usuario')?.hasError('email')
+          myLogin.get('usuario')?.hasError('email'),
+        success: myLogin.get('usuario')?.valid
       }"
     />
     <div *ngIf="myLogin.get('usuario')?.dirty">
@@ -34,7 +35,11 @@
       formControlName="password"
       type="password"
       [ngClass]="{
-        warning: myLogin.get('password')?.hasError('minlength')
+        warning: myLogin.get('password')?.hasError('minlength'),
+        error:
+          myLogin.get('password')?.dirty &&
+          myLogin.get('password')?.hasError('required'),
+        success: myLogin.get('password')?.valid
       }"
     />
 

@@ -12,6 +12,10 @@ export class HomeComponent {
   productos: Producto[] = [];
   productosPipe: any = [];
   constructor(private productoServicios: ServicioProductosService) {
+    //-----------------------------------------------Con asyncAwait
+    this.llamarProductos();
+
+    //-----------------------------------------------Manejo de llamadas con suscribe
     // this.productos = productoServicios.obtenerProductos().subscribe({
     //   next: (result: any) => {
     //     this.productos = result['results'];
@@ -27,8 +31,6 @@ export class HomeComponent {
     //   .obtenerProductosPromise()
     //   .then((result: any) => (this.productos = result.results))
     //   .catch((error) => console.log(error));
-    //-----------------------------------------------Con asyncAwait
-    this.llamarProductos();
     //-----------------------------------------------Con Pipe
     // this.productosPipe = this.productoServicios.obtenerProductosPipe();
   }
