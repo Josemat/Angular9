@@ -1,2 +1,21 @@
-<h2>Hola {{ titulo }}!</h2>
-<input type="text" [(ngModel)]="titulo" />
+<h1>Resultado de búsqueda</h1>
+<div class="grilla">
+  <div id="card" *ngFor="let producto of productos">
+    <h2>{{ producto.title | slice : 0 : 40 }}</h2>
+    <div class="image-crop">
+      <img
+        id="avatar"
+        src="{{ producto.thumbnail }} "
+        style="height: 200px; width: 200px"
+      />
+    </div>
+    <div id="bio">
+      <p class="precio">{{ producto.price | currency : "ARS" }}</p>
+    </div>
+    <div id="buttons">
+      <button id="msg" routerLink="detalle/{{ producto.id }}">
+        Ver detalles
+      </button>
+    </div>
+  </div>
+</div>

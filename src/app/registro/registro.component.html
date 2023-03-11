@@ -1,0 +1,62 @@
+<h2>Registro</h2>
+<Form [formGroup]="myForm" (ngSubmit)="registrarse()">
+  <div class="grupoUno">
+    <label>Nombre</label><input formControlName="nombre" type="text" />
+    <span
+      *ngIf="
+        myForm.get('nombre')?.hasError('required') &&
+        myForm.get('nombre')?.dirty
+      "
+    >
+      Campo obligatorio
+    </span>
+    <span
+      *ngIf="
+        myForm.get('nombre')?.hasError('minlength') &&
+        myForm.get('nombre')?.dirty
+      "
+    >
+      El nombre debe ser de al menos 4 caracteres
+    </span>
+  </div>
+  <div class="grupoUno">
+    <label>Apellido</label><input type="text" formControlName="apellido" />
+  </div>
+  <div class="grupoUno">
+    <label>Correo</label><input type="email" formControlName="correo" />
+    <span
+      *ngIf="
+        myForm.get('correo')?.hasError('required') &&
+        myForm.get('correo')?.dirty
+      "
+    >
+      Campo obligatorio
+    </span>
+    <span *ngIf="myForm.get('correo')?.hasError('email')">
+      Ingrese correo válido
+    </span>
+  </div>
+  <div class="grupoUno">
+    <label>Contraseña</label
+    ><input type="password" formControlName="password" />
+    <span
+      *ngIf="
+        myForm.get('password')?.hasError('required') &&
+        myForm.get('password')?.dirty
+      "
+    >
+      Ingrese correo válido
+    </span>
+    <span
+      *ngIf="
+        myForm.get('password')?.hasError('minlength') &&
+        myForm.get('password')?.dirty
+      "
+    >
+      La contraseña debe ser de al menos 6 caracteres
+    </span>
+  </div>
+  <div class="grupoUno">
+    <button [disabled]="myForm.invalid" type="submit">registrarse =)</button>
+  </div>
+</Form>

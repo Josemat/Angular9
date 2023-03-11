@@ -1,0 +1,14 @@
+<h2>{{ productoDetalle?.detalle?.title }}</h2>
+<p class="detalles">{{ productoDetalle?.descripcion?.plain_text }}</p>
+<div class="imagenes">
+  <div *ngFor="let foto of productoDetalle?.detalle?.pictures">
+    <img src="{{ foto.url }}" />
+  </div>
+</div>
+<p style="text-align: end">{{ productoDetalle?.detalle?.warranty }}</p>
+<h3 *ngIf="precioOriginal">
+  Precio original:<span style="text-decoration: line-through">
+    {{ productoDetalle?.detalle?.original_price | currency : "ARS" }}
+  </span>
+</h3>
+<h3>Precio: {{ productoDetalle?.detalle?.price | currency : "ARS" }}</h3>

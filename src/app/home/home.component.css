@@ -1,0 +1,103 @@
+.grilla {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#card {
+  background-color: #e3e3e3;
+  height: auto;
+  width: 350px;
+  margin: 10px;
+  border-radius: 10px;
+  padding-bottom: 1px;
+  box-shadow: -1px 3px 9px #282c38;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 25px;
+  background-color: #f6f8f9;
+  border-radius: 10px 10px 0 0;
+  color: #393b45;
+  padding: 7px 0;
+  font-weight: 800;
+  margin: 0;
+}
+
+.image-crop {
+  display: block;
+  position: relative;
+  background-color: #e6ebee;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+#avatar {
+  display: inline;
+  height: 150px;
+
+  width: auto;
+}
+
+#bio {
+  display: block;
+  margin: 30px auto;
+  width: 280px;
+  height: auto;
+}
+
+#bio p {
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: justify;
+  text-align: center;
+}
+
+.label {
+  margin: 0;
+}
+
+#buttons {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 280px;
+}
+
+button {
+  display: block;
+  position: relative;
+  padding: 6px 0;
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #3477e2;
+  color: #e6ebee;
+  font-family: "cairo", serif;
+}
+
+button:focus {
+  display: none;
+}
+
+button:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#msg {
+  background-color: white;
+  color: #393b45;
+}

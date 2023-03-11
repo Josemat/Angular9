@@ -1,0 +1,53 @@
+<h2>Ingresar al sistema</h2>
+<form [formGroup]="myLogin" (ngSubmit)="logIn()">
+  <div class="grupoUno">
+    <label>Email</label>
+    <input
+      formControlName="usuario"
+      type="email"
+      [ngClass]="{
+        error:
+          myLogin.get('usuario')?.dirty &&
+          myLogin.get('usuario')?.hasError('required'),
+        warning:
+          myLogin.get('usuario')?.hasError('pattern') ||
+          myLogin.get('usuario')?.hasError('email')
+      }"
+    />
+    <div *ngIf="myLogin.get('usuario')?.dirty">
+      <p *ngIf="myLogin.get('usuario')?.hasError('required')">
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="
+          myLogin.get('usuario')?.hasError('pattern') ||
+          myLogin.get('usuario')?.hasError('email')
+        "
+      >
+        Debe ingresar un mail válido ej: correo@correo.com
+      </p>
+    </div>
+  </div>
+  <div class="grupoUno">
+    <label>Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      [ngClass]="{
+        warning: myLogin.get('password')?.hasError('minlength')
+      }"
+    />
+
+    <div *ngIf="myLogin.get('password')?.dirty">
+      <p *ngIf="myLogin.get('password')?.hasError('required')">
+        Este campo es obligatorio
+      </p>
+      <p *ngIf="myLogin.get('password')?.hasError('minlength')">
+        Debe contener al menos 6 caracteres
+      </p>
+    </div>
+  </div>
+  <div class="grupoUno">
+    <button type="submit" [disabled]="myLogin.invalid">Login</button>
+  </div>
+</form>
